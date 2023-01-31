@@ -11,6 +11,15 @@
 
   <span id="error"></span>
 
+  <section id="UploadImages">
+    <h2>Subir una imagen</h2>
+
+    <form id="upload">
+      <input type="file" id="file" name="file">
+      <button type="button" onclick="uploadImage()">Subir Imagen</button>
+    </form>
+  </section>
+
   <section id="randomMichis">
     <h2>Michis aleatorios</h2>
 
@@ -29,7 +38,7 @@
     </article>
     
 
-    <button onclick="loadRandomMichis()">Recargar</button>
+    <button onclick="loadRandomImages()">Recargar</button>
   </section>
   
   <section id="favoriteMichis">
@@ -42,5 +51,6 @@
   </section>
 
   <script src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
