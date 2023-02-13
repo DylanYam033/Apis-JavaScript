@@ -60,12 +60,14 @@ async function favoriteImages() {
 
     data.forEach(michi => {
       const article = document.createElement('article');
+      article.classList.add('containerMichis');
       const img = document.createElement('img');
       const btn = document.createElement('button');
-      const btnText = document.createTextNode('Sacar al michi de favoritos');
+      const btnText = document.createTextNode('👎');
 
       img.src = michi.image.url;
       img.width = 150;
+      img.height = 150;
       btn.appendChild(btnText);
       btn.onclick = () => deleteImageSaved(michi.id);
       article.appendChild(img);
@@ -77,9 +79,6 @@ async function favoriteImages() {
 
 async function saveImages(id) {
 
-  // const { data, status } = await api.post('/favourites', {
-  //   image_id: id,
-  // });
   const res = await fetch(API_URL_FAVOTITES, {
     method: 'POST',
     headers: {
